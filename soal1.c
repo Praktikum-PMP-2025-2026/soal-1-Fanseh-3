@@ -20,7 +20,7 @@
 
 
 void minecraft (int *ptr_first,int a,int *ptr_sum,float *ptr_avg, int *ptr_max,int *ptr_idx){
-
+    
     // int arr[a];
     // arr[*ptr_first] = a;
     for(int i = 0;i< a;i++){
@@ -31,9 +31,12 @@ void minecraft (int *ptr_first,int a,int *ptr_sum,float *ptr_avg, int *ptr_max,i
     for(int i = 0;i< a;i++){
         if(*ptr_max < *(ptr_first + i)){
             *ptr_max = *(ptr_first + i);
-            *ptr_idx = i;
+            *ptr_idx = i+1;
 
-        } 
+        } else {
+            *ptr_max = -1;
+
+        }
     }
 
 }
@@ -57,7 +60,7 @@ float avg = 0;
 
 int max = 0;
 
-int idx = 1;
+int idx = 0;
     scanf("%d", &a);
     for(int i =0;i<a;i++){
         scanf("%d", &str[i]);
