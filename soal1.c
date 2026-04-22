@@ -11,18 +11,22 @@
 
 int x = 0;
 int a;
-int sum = 0;
-float avg = 0;
-int max = 0;
-int idx = 1;
-int *ptr_sum = &sum;
-int *ptr_avg = &avg;
-int *ptr_max = &max;
-int *ptr_idx = &idx;
-int *ptr_first = &x;
+int sum = 0, *ptr_sum;
+*ptr_sum = &sum;
+float avg = 0, *ptr_avg;
+ptr_avg = &avg;
+int max = 0, *ptr_max;
+*ptr_max = &max;
+int idx = 1, *ptr_idx;
+*ptr_idx = &idx;
+// int *ptr_sum = &sum;
+// int *ptr_avg = &avg;
+// int *ptr_max = &max;
+// int *ptr_idx = &idx;
+// int *ptr_first = &x;
 
 
-int minecraft (ptr_first, a, ptr_sum, ptr_avg, ptr_max, ptr_idx){
+void minecraft (ptr_first, a, ptr_sum, ptr_avg, ptr_max, ptr_idx){
     int arr[a];
     arr[ptr_first] = a;
     for(int i = 1;i<=a;i++){
@@ -46,14 +50,14 @@ int minecraft (ptr_first, a, ptr_sum, ptr_avg, ptr_max, ptr_idx){
 }
 
 void display(sum, avg, max, idx){
-    printf("SUM %d\n", ptr_sum);
-    printf("AVG %2f\n", ptr_avg);
-    printf("MAX %d\n", ptr_max);
-    printf("IDX %d\n", ptr_idx);
+    printf("SUM %d\n", sum);
+    printf("AVG %2f\n", avg);
+    printf("MAX %d\n", max);
+    printf("IDX %d\n", idx);
 }
 
 int main(){
     scanf("%d",&a);
-    minecraft (ptr_first, a,ptr_sum, ptr_avg, ptr_max, ptr_idx);
-    display(sum, avg, max, idx);
+    minecraft (0, a,sum, ptr_avg, max, idx);
+    display(ptr_sum, ptr_avg, ptr_max, ptr_idx);
 }
