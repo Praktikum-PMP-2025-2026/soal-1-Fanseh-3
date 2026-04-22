@@ -31,12 +31,11 @@ void minecraft (int *ptr_first,int a,int *ptr_sum,float *ptr_avg, int *ptr_max,i
     for(int i = 0;i< a;i++){
         if(*ptr_max < *(ptr_first + i)){
             *ptr_max = *(ptr_first + i);
-            *ptr_idx = i+1;
+            *ptr_idx = i;
 
-        } else {
-            *ptr_max = -1;
+        } 
 
-        }
+        
     }
 
 }
